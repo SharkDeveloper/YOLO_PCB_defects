@@ -1,0 +1,11 @@
+path: pcb
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: "open_circuit"
+  1: "short"
+  2: "mouse_bite"
+  3: "spur"
+  4: "missing_hole"
+  5: "spurious_copper"
