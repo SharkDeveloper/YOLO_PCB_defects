@@ -4,6 +4,8 @@ import csv
 import time
 from datetime import datetime
 import pandas as pd
+from ultralytics import YOLO
+
 
 # Путь к директории для сохранения метрик
 METRICS_DIR = "metrics"
@@ -329,3 +331,12 @@ def get_experiment_name(base_name=None):
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     return f"{base_name}_{timestamp}"
+
+
+def convert_to_onnx(model_path, output_path):
+
+    # Load a YOLOv8 model
+    model = YOLO("yolov8n.pt")
+
+    # Export the model
+    model.export(format="onnx", opset=12, simplify=True, dynamic=False, imgsz=640)
