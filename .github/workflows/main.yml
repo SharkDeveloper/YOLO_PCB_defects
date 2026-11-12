@@ -21,3 +21,5 @@ jobs:
         uses: amdsolutions007/amd-activity-booster@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: AMD Activity Booster
+        uses: amdsolutions007/amd-activity-booster@v1.0.0
